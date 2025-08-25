@@ -23,7 +23,18 @@ class MainActivity : AppCompatActivity() {
             this,R.layout.activity_main
         )
 
-        binding.textview1.text = "hello this is test"
+
+        // Accessing binding Views
+        var v1 = Vehicle()
+        v1.name = "BMW"
+        v1.modelYear = "2024"
+        binding.myVehicle = v1
+
+
+        // binding click handlers
+        binding.clickHandler = VehicleClickListner(this)
+
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
